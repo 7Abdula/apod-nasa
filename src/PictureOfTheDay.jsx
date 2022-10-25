@@ -8,10 +8,24 @@ function PictureOfTheDay({ data, visible }) {
       {visible && (
         <div className="flex flex-col items-center pb-20">
           <p className="mb-6 font-semibold">{todayDate}</p>
-          <img src={data.hdurl} alt="" className="drop-shadow-md" />
+          {data.media_type === 'image' ? (
+            <img src={data.hdurl} alt="" className="drop-shadow-md" />
+          ) : (
+            <div className="pb-[56.25%] relative block w-full">
+              <iframe
+                className="drop-shadow-md w-full h-full absolute left-0 top-0"
+                src={data.url}
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title="video"
+              ></iframe>
+            </div>
+          )}
+
           <div className="flex flex-col items-center justify-center gap-4 px-4 text-center leading-relaxed mt-8 md:text-lg">
             <h1>
-              <span className="font-semibold">Image Credit: </span>
+              <span className="font-semibold">Credit: </span>
               {data.copyright}
             </h1>
             <p>

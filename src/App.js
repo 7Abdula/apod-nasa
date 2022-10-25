@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import './App.css';
 import NasaLogo from './assets/nasa-logo.svg';
 import PictureOfTheDay from './PictureOfTheDay';
 
