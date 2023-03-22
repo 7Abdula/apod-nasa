@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 function PictureOfTheDay({ data, visible }) {
   const today = new Date();
@@ -8,8 +8,8 @@ function PictureOfTheDay({ data, visible }) {
       {visible && (
         <div className="flex flex-col items-center pb-20">
           <p className="mb-6 font-semibold">{todayDate}</p>
-          {data.media_type === 'image' ? (
-            <img src={data.hdurl} alt="" className="drop-shadow-md" />
+          {data.media_type === "image" ? (
+            <img src={data.hdurl} alt="" className="drop-shadow-lg" />
           ) : (
             <div className="pb-[56.25%] relative block w-full">
               <iframe
@@ -23,7 +23,7 @@ function PictureOfTheDay({ data, visible }) {
             </div>
           )}
 
-          <div className="flex flex-col items-center justify-center gap-4 px-4 text-center leading-relaxed mt-8 md:text-lg">
+          <div className="flex flex-col justify-center gap-4 px-4 leading-relaxed mt-8 md:text-lg">
             <h1>
               <span className="font-semibold">Credit: </span>
               {data.copyright}
